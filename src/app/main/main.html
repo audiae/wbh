@@ -1,0 +1,48 @@
+<div class="container">
+
+  <div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </div>
+
+  <div class="jumbotron text-center">
+    <h1>WhistleBlower Hotline</h1>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <div>
+        <div class="col-sm-4 col-sm-offset-6">
+          <label>Login</label>
+          <br>
+          <button type="button" class="btn btn-sm btn-primary" ui-sref="user">Click Here</button>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <label>Report Anonymously</label>
+        <br>
+        <button type="button" class="btn btn-sm btn-success" ui-sref="report">Click Here</button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="row">
+    <div class="text-center">
+      <h1> Types of Crimes </h1>
+      <h3> You can report these cases through us </h3>
+      <br>
+    </div>
+    <div class="col-sm-6 col-md-4" ng-repeat="crime in main.crimes | orderBy:'rank'">
+      <div class="thumbnail">
+        <img class="pull-right" ng-src="assets/images/{{ crime.logo }}" alt="{{ crime.title }}">
+        <div class="caption">
+          <h3>{{ crime.title }}</h3>
+          <p>{{ crime.description }}</p>
+          <p><a ng-href="{{crime.url}}">{{ crime.url }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

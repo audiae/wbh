@@ -1,0 +1,168 @@
+ <div class="container">
+
+  <div>
+    <acme-navbarusr creation-date="main.creationDate"></acme-navbarusr>
+  </div>
+
+<div class="container controls">
+    <form role="form" ng-submit="profile.saveProfile()" name="profile.editProfileForm" novalidate="" class="form-validate">
+        <div class="panel-heading">
+            <h1>Create a Case to Report </h1>
+			<p> Your ID will be shown to our agents</p>
+        </div>
+        <div id="accordion" role="tablist" aria-multiselectable="true" class="panel-group">
+            <div class="panel panel-default">
+                <div id="headingOne" role="tab" class="panel-heading">
+                    <h1 class="panel-title"><a data-toggle="collapse" href="javascript:;" data-parent="#accordion" data-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">          Incident Details       </a>
+                    </h1>
+                </div>
+                <div id="collapseOne" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+								<label for="slots">Type of Crime *</label>
+								<select id="lokasi" class="form-control" ng-model="waktu.mulai.jam">
+									<option value="" selected disabled> -- </option>
+									<option value="00">Arson</option>
+									<option value="01">Assault</option>
+									<option value="02">Burglary</option>
+									<option value="03">Business Crime</option>
+									<option value="04">Criminal Damage</option>
+									<option value="05">Cybercrime</option>
+									<option value="06">Drug Manufacture</option>
+									<option value="07">Drug Trafficking/Supply</option>
+									<option value="08">Fraud and Forgery</option>
+									<option value="09">Handling Stolen Goods</option>
+									<option value="10">Human Trafficking</option>
+									<option value="11">Immigration</option>
+									<option value="12">Most Wanted SUspects</option>
+									<option value="13">Murder</option>
+									<option value="14">Possession of Weapons</option>
+									<option value="15">Rape/Sexual Assault</option>
+									<option value="16">Robbery</option>
+									<option value="17">Smuggling</option>
+									<option value="18">Tax Evasion</option>
+									<option value="19">Terrorism</option>
+									<option value="20">Theft</option>
+									<option value="21">Vehicle Crime</option>
+								</select>
+							</div>
+						</div>
+						<br>
+                        <input class="form-control" placeholder="Or type it here">
+						<br>
+                        <p>(*) Mandatory</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div id="headingOne" role="tab" class="panel-heading">
+                    <h1 class="panel-title"><a data-toggle="collapse" href="javascript:;" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="true"
+                            aria-controls="collapseOne">          Incident/Crime Location       </a>
+                    </h1>
+                </div>
+                <div id="collapseTwo" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Road *</label>
+                                <input type="text" class="form-control required" placeholder="Ex: Jl. TB Simatupang">
+                            </div>
+                            <div class="col-md-2">
+                                <label>Area *</label>
+                                <input type="text" alt="-" class="form-control" placeholder="Ex: In front of Pertamina Gas Station">
+                            </div>
+							<div class="col-md-2">
+                                <label>Time of incident *</label>
+                                <input type="text" alt="-" class="form-control" placeholder="Ex: 05:30 AM, Around Noon, I don't know'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div id="headingOne" role="tab" class="panel-heading">
+                        <h1 class="panel-title"><a data-toggle="collapse" href="javascript:;" data-parent="#accordion" data-target="#collapseThree"
+                                aria-expanded="true" aria-controls="collapseOne">          Offender Information       </a>
+                        </h1>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="">
+                                <label for="name">Do you know the offender?</label>
+								<div class="radio">
+									<label>
+										<input type="radio" name="terms" ng-model="profile.user.user_gender" value="t">
+										<span ></span>
+										Yes
+									</label>
+                                </div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="terms" ng-model="profile.user.user_gender" value="t">
+										<span ></span>
+										No
+									</label>
+                                </div>
+								<label for="offender">Offender's name & Description</label>
+								<input type="text" alt="-" class="form-control" placeholder="Full Name">
+                            	<textarea class="form-control" id="gear" rows="4" ng-model="profile.user.user_gear" placeholder="Male, ~170 cm, 75kg, short dark hair. Wearing red shirt and blue jeans."></textarea>
+								<label for="offender">Offender's Address</label>
+                            	<textarea class="form-control" id="gear" rows="4" ng-model="profile.user.user_gear" placeholder="Cilandak Permai Raya no. 27"></textarea>
+                            </div>
+                            <div class="col-xs-6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div id="headingOne" role="tab" class="panel-heading">
+                        <h1 class="panel-title"><a data-toggle="collapse" href="javascript:;" data-parent="#accordion" data-target="#collapseFour"
+                                aria-expanded="true" aria-controls="collapseOne">        Other Details      </a>
+                        </h1>
+                    </div>
+                    <div id="collapseThree" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="">
+								<label for="offender">Please describe the incident/criminal activity</label>
+                            	<textarea class="form-control" id="gear" rows="4" ng-model="profile.user.user_gear" placeholder="Hit & Run in front of gas station involving a sedan and four victims"></textarea>
+                                <label for="name">Was there a vehicle involved??</label>
+								<div class="radio">
+									<label>
+										<input type="radio" name="terms" ng-model="profile.user.user_gender" value="t">
+										<span ></span>
+										Yes
+									</label>
+                                </div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="terms" ng-model="profile.user.user_gender" value="t">
+										<span ></span>
+										No
+									</label>
+                                </div>
+								<label for="offender">Description of Vehicle</label>
+                            	<textarea class="form-control" id="gear" rows="4" ng-model="profile.user.user_gear" placeholder="Black Toyota Sedan, Plate: B 19 GUY"></textarea>
+								
+                            </div>
+                            <div class="col-xs-6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<br>
+            <button type="submit" class="btn btn-primary">Submit Case</button>
+    </form>
+    </div>
+
+
+
+</div>
+<!-- =============== VENDOR SCRIPTS ===============-->
+
+<!-- PARSLEY-->
+<script src="../../../vendor/parsleyjs/dist/parsley.min.js"></script>
